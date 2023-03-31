@@ -6,7 +6,6 @@
 .iconfont {
   margin-right: 8px;
 }
-
 .layui-icon {
   margin-right: 8px;
   margin-left: 20px;
@@ -19,11 +18,11 @@ iframe {
 
 .layui-body {
   overflow: hidden;
-}
+} /* 清除页面外的滚动条 */
 
-a {
+ a {
   transition: none !important;
-}
+}/*强制删除所有a链接的默认的动画（layui自带） */
 
 .userinfo {
   height: 60px;
@@ -31,6 +30,7 @@ a {
   text-align: center;
   font-size: 12px;
   user-select: none;
+  /* 禁止被选中 */
 }
 
 .layui-side-scroll .userinfo {
@@ -38,8 +38,8 @@ a {
 }
 
 .layui-nav-img {
-  width: 40px;
   height: 40px;
+  width: 40px;
 }
 
 .text-avatar {
@@ -55,8 +55,4 @@ a {
   position: relative;
   top: 4px;
   margin-right: 10px;
-}
-
-.layui-nav-item a {
-  font-size: 12px;
 }
