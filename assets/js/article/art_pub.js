@@ -18,7 +18,7 @@ $(function() {
         // 调用模板引擎，渲染分类的下拉菜单
         var htmlStr = template('tpl-cate', res)
         $('[name=cate_id]').html(htmlStr)
-        // 一定要记得调用 form.render() 方法
+        // 一定要记得调用 form.render() 方法,因为下拉表单selecte里面的选项是动态添加的
         form.render()
       }
     })
@@ -70,13 +70,14 @@ $(function() {
   $('#form-pub').on('submit', function(e) {
     // 1. 阻止表单的默认提交行为
     e.preventDefault()
-    // 2. 基于 form 表单，快速创建一个 FormData 对象
+    // 2. 基于 form 表单，快速创建一个 FormData 对象 
+    // $(this)[0]为jquery对象转换为dom对象
     var fd = new FormData($(this)[0])
     // 3. 将文章的发布状态，存到 fd 中
     fd.append('state', art_state)
+    
     // 4. 将封面裁剪过后的图片，输出为一个文件对象
-    $image
-      .cropper('getCroppedCanvas', {
+    $image.cropper('getCroppedCanvas', {
         // 创建一个 Canvas 画布
         width: 400,
         height: 280
